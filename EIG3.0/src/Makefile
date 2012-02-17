@@ -21,7 +21,7 @@ BLAS = blas
 
 # CC=/util/bin/gcc 
 CC=gcc
-FF=g77     
+FF=gfortran
 
 CFLAGS= -c -pthread -I$(IDIR) -I$(IDIR3) -Wimplicit
 OBJ=strsubs.o sortit.o vsubs.o statsubs.o linsubs.o getpars.o xsearch.o gauss.o	gds.o
@@ -87,10 +87,10 @@ uninstall:
 	rm -f $(PROGS) $(PERLPROGS)
 
 $(M1): nicklib $(M1O)
-	gcc -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M1) $(M1O) $(NLIB) -L/broad/tools/lib64 -lg2c -lm -llapack -latlas -l$(BLAS) -Wimplicit 
+	gcc -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M1) $(M1O) $(NLIB) -L/broad/tools/lib64 -lgfortran -lm -llapack -latlas -l$(BLAS) -Wimplicit 
 
 $(M1Z): nicklib $(M1ZO)
-	gcc -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M1Z) $(M1ZO) $(NLIB)  -L/broad/tools/lib64 -lm -lg2c -latlas -llapack -l$(BLAS) -Wimplicit
+	gcc -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M1Z) $(M1ZO) $(NLIB)  -L/broad/tools/lib64 -lm -lgfortran -latlas -llapack -l$(BLAS) -Wimplicit
 
 $(M2): nicklib $(M2O)
 	gcc -I$(IDIR) $(DEBUG_OPTIONS) -lm  -o $(M2) $(M2O) $(NLIB) -Wimplicit
@@ -105,13 +105,13 @@ $(M5): nicklib $(M5O)
 	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -lm  -o $(M5) $(M5O) $(NLIB) -Wimplicit
 
 $(M6): nicklib $(M6O)
-	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M6) $(M6O) $(NLIB) -L/broad/tools/lib64 -lg2c -lm -latlas -llapack -l$(BLAS) -Wimplicit
+	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M6) $(M6O) $(NLIB) -L/broad/tools/lib64 -lgfortran -lm -latlas -llapack -l$(BLAS) -Wimplicit
 
 $(M7): nicklib $(M7O)
-	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M7) $(M7O) $(NLIB) -L/broad/tools/lib64 -lg2c -lm -latlas -llapack -l$(BLAS)  -Wimplicit
+	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M7) $(M7O) $(NLIB) -L/broad/tools/lib64 -lgfortran -lm -latlas -llapack -l$(BLAS)  -Wimplicit
 
 $(M8): nicklib $(M8O)
-	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -o $(M8) $(M8O) $(NLIB) -lg2c -lm  -Wimplicit
+	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -o $(M8) $(M8O) $(NLIB) -lgfortran -lm  -Wimplicit
 
 $(M9): nicklib $(M9O)
 	gcc -I$(IDIR) $(DEBUG_OPTIONS) -lm  -o $(M9) $(M9O) $(NLIB) -Wimplicit
