@@ -96,16 +96,16 @@ $(M1Z): nicklib $(M1ZO)
 	gcc -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M1Z) $(M1ZO) $(NLIB)  -L/broad/tools/lib64 -lm -lgfortran $(AlgebraLibLinkFlags) -Wimplicit
 
 $(M2): nicklib $(M2O)
-	gcc -I$(IDIR) $(DEBUG_OPTIONS) -lm  -o $(M2) $(M2O) $(NLIB) -Wimplicit
+	gcc -I$(IDIR) $(DEBUG_OPTIONS) -o $(M2) $(M2O) $(NLIB) -lm -Wimplicit
 
 $(M3): nicklib $(M3O)
-	gcc -I$(IDIR) $(DEBUG_OPTIONS) -lm  -o $(M3) $(M3O) $(NLIB) -Wimplicit
+	gcc -I$(IDIR) $(DEBUG_OPTIONS) -o $(M3) $(M3O) $(NLIB) -lm -Wimplicit
 
 $(M4): nicklib $(M4O)
 	gcc -I$(IDIR) $(DEBUG_OPTIONS)  -o $(M4) $(M4O) $(NLIB) -lm -Wimplicit
 
 $(M5): nicklib $(M5O)
-	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -lm  -o $(M5) $(M5O) $(NLIB) -Wimplicit
+	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -o $(M5) $(M5O) $(NLIB) -lm -Wimplicit
 
 $(M6): nicklib $(M6O)
 	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -pthread -o $(M6) $(M6O) $(NLIB) -L/broad/tools/lib64 -lgfortran -lm $(AlgebraLibLinkFlags) -Wimplicit
@@ -117,10 +117,10 @@ $(M8): nicklib $(M8O)
 	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -o $(M8) $(M8O) $(NLIB) -lgfortran -lm  -Wimplicit
 
 $(M9): nicklib $(M9O)
-	gcc -I$(IDIR) $(DEBUG_OPTIONS) -lm  -o $(M9) $(M9O) $(NLIB) -Wimplicit
+	gcc -I$(IDIR) $(DEBUG_OPTIONS) -o $(M9) $(M9O) $(NLIB) -lm -Wimplicit
 
 $(P4): nicklib $(P4O)
-	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -lm  -o $(P4) $(P4O) $(NLIB) -Wimplicit
+	gcc  -I$(IDIR) $(DEBUG_OPTIONS) -o $(P4) $(P4O) $(NLIB) -lm -Wimplicit
 
 libnick.a:	dirs tables  $(OBJ)
 	ar -r libnick.a $(OBJ)
