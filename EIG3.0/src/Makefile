@@ -19,7 +19,8 @@ VPATH=.:nicksrc:perlsrc:eigensrc
 BLAS = blas
 # may need to change to BLAS = blas (depends on blas/lapack installation)
 
-AlgebraLibLinkFlags=-l:libatlas.so.3 -llapack -l$(BLAS)
+AlgebraLibLinkFlags=-l:libatlas.so.3 -l:liblapack.so.3 -l:libblas.so.3
+# -llapack -l$(BLAS)
 # 2016.03.24 -l:libatlas.so.3 is used because ubuntu 14.04 does not have libatlas.so. Originally it was -latlas.
 
 # CC=/util/bin/gcc 
