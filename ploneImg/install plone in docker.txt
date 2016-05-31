@@ -21,6 +21,7 @@ copy backups/ and blobstoragebackups/ into zinstance/var
 
 then run /usr/local/Plone-4.1.5/zinstance/bin/restore
 
+#Install easy_install
 wget https://bootstrap.pypa.io/ez_setup.py -O - | /usr/local/Plone-4.1.5/Python-2.6/bin/python
 
 #install no additional products (no bibliography)
