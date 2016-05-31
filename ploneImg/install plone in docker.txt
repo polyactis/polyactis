@@ -3,15 +3,11 @@ apt-get upgrade
 
 apt-get install gcc make lynx wget libssl libssl-dev libssl1.0.0 python-libxml2 libxslt1-dev libxml2 libxml2-dev vim tmux subversion
 
-./install.sh --libz=yes --target=/usr/local/Plone-4.1.6 --without-ssl standalone
 
-
-./install.sh  --target=/usr/local/Plone-4.3.7 standalone
-
-modify Python tarball for _sha256 error
+#install Plone 4.1.5,
+#modify Python tarball for _sha256 error, recorded in "Plone Logs"
 
 root@d2c88b733206:/mnt/Plone-4.1.5-UnifiedInstaller# ./install.sh  --libz=yes  --target=/usr/local/Plone-4.1.5  standalone
-
 
 
 Use the account information below to log into the Zope Management Interface
@@ -23,7 +19,7 @@ The account has full 'Manager' privileges.
 
 copy backups/ and blobstoragebackups/ into zinstance/var
 
-then run /usr/local/Plone-4.3.7/zinstance/bin/restore
+then run /usr/local/Plone-4.1.5/zinstance/bin/restore
 
 wget https://bootstrap.pypa.io/ez_setup.py -O - | /usr/local/Plone-4.1.5/Python-2.6/bin/python
 
